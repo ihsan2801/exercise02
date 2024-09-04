@@ -1,80 +1,68 @@
 // EXERCISE 02
 
 // SOAL NOMOR 1
-let number: number = 3;
+const _number1: number = 25;
 
-function checkOddOrEven(number) {
-    if (number % 2 === 0) {
-        console.log(`${number} adalah angka genap`);
-    } else {
-        console.log(`${number} adalah angka ganjil`);
-    }
+if (_number1 % 2 === 0) {
+    console.log(`${_number1} -> even number`);
+}   else {
+    console.log(`${_number1} -> odd number`);
 }
-
-// Penggunaan
-checkOddOrEven(25); // Output: 25 adalah angka ganjil
-checkOddOrEven(2);  // Output: 2 adalah angka genap
 
 
 // SOAL NOMOR 2
-function isPrime(number) {
-    if (number <= 1) return false; // Angka 1 dan kurang dari 1 bukan bilangan prima
+const _number2: number = 1;
+let isPrime: boolean = true;
 
-    for (let i = 2; i < number; i++) {
-        if (number % i === 0) {
-            return false; // Jika ada pembagi lain selain 1 dan dirinya sendiri
-        }
+for (let i: number = 2; i < _number2; i++) {
+    if (_number2 % i === 0) {
+        isPrime = false;
+        break;
     }
-    return true; // Jika tidak ada pembagi selain 1 dan dirinya sendiri
 }
-
-// Penggunaan
-console.log(isPrime(7)); // Output: true (7 adalah bilangan prima)
-console.log(isPrime(6)); // Output: false (6 bukan bilangan prima)
+console.log(isPrime);
 
 
 // SOAL NOMOR 3
-function sumOfNumbers(N) {
-    let sum = 0;
-    for (let i = 1; i <= N; i++) {
-        sum += i;
-    }
-    return sum;
+const _number3: number = 3;
+let _hasil: string = `$(_number3) -> `;
+let _sum: number = 0;
+for (let i = 1; i <= _number3; i++) {
+    _sum += i;
+    _hasil += i === _number3 ?  `${i} = ${_sum}` : `${i} + `;
 }
-
-// Penggunaan
-console.log(sumOfNumbers(5)); // Output: 15 (1 + 2 + 3 + 4 + 5)
-console.log(sumOfNumbers(3)); // Output: 6 (1 + 2 + 3)
-
+console.log(_hasil); 
 
 // SOAL NOMOR 4
-function factorial(number) {
-    let result = 1;
-    for (let i = number; i > 0; i--) {
-        result *= i;
-    }
-    return result;
+const _number4: number = 6;
+let _hasilFact = `${_number4}! -> ${_number4} x`;
+let _fact = _number4;
+for (let i = _number4 - 1; i >= 1; i--) {
+    _fact *= i;
+    console.log(_fact);
+    _hasilFact += i === 1 ? `${i} = ${_fact}` : ` ${i} x`;
 }
-
-// Penggunaan
-console.log(factorial(4)); // Output: 24 (4 * 3 * 2 * 1)
-console.log(factorial(6)); // Output: 720 (6 * 5 * 4 * 3 * 2 * 1)
-
+console.log(_hasilFact);
 
 // SOAL NOMOR 5
-function printFibonacci(N) {
-    let fibonacciSeries = [];
-    let a = 0, b = 1, nextTerm;
+const _number5: number = 13;
+let _fib: number = 0;
+let _n1: number = 0;
+let _n2: number = 1;
+let _hasilFib = `${_number5} -> `
+console.log(_n1, _n2);
 
-    for (let i = 1; i <= N; i++) {
-        fibonacciSeries.push(a);
-        nextTerm = a + b;
-        a = b;
-        b = nextTerm;
-    }
-    return fibonacciSeries;
+for (let i = 1; i < _number5; i++) {
+
+    _fib = _n1 + _n2;
+    console.log(_fib);
+
+    _n1 = _n2;
+    console.log(_n1);
+
+    _n2 = _fib;
+    console.log(_n2);
+    
+    _hasilFib += i === _number5 ? `${_n1}` : `${_n1},`;
 }
-
-// Penggunaan
-console.log(printFibonacci(15)); 
-// Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
+console.log(_hasilFib)
